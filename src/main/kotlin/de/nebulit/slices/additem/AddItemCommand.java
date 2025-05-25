@@ -15,6 +15,6 @@ public record AddItemCommand(
 
     @Override
     public String getSubject() {
-        return aggregateId.toString();
+        return "/"+aggregateId.toString();
     }
 }
