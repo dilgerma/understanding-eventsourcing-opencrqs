@@ -1,4 +1,4 @@
-package de.nebulit.slices.additem;
+package de.nebulit.eventsourcingbook.slices.additem;
 
 import com.opencqrs.framework.command.Command;
 import java.util.UUID;

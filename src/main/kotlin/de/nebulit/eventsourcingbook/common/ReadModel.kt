@@ -1,4 +1,4 @@
-package de.nebulit.common
+package de.nebulit.eventsourcingbook.common
 
 import java.util.UUID
 import mu.KotlinLogging

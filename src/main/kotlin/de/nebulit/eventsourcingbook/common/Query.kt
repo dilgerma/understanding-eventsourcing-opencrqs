@@ -1,8 +1,8 @@
-package de.nebulit.common
+package de.nebulit.eventsourcingbook.common
 
 import org.springframework.stereotype.Component
 interface Query
 
-interface QueryHandler<T:Query,U> {
+interface QueryHandler<T: Query,U> {
     fun handleQuery(query:T): U
 }

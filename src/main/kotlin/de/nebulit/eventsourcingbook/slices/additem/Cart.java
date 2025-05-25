@@ -1,8 +1,7 @@
-package de.nebulit.slices.additem;
+package de.nebulit.eventsourcingbook.slices.additem;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 record Cart(List<String> items) {
 
