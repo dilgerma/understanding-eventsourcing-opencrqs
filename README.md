@@ -27,9 +27,7 @@ By subscribing to the newsletter you´ll get access to the "little" Eventmodelin
 
 ### Book
 
-The book is written in public and current progress can always be checked [here](https://eventmodelers.de/das-eventsourcing-buch)
-
-The Github Repository including all source code can be found here:
+The Github Repository for the original implementation including all source code can be found here:
 [Github](https://github.com/dilgerma/eventsourcing-book)
 
 ### Sample Application
@@ -38,7 +36,8 @@ The sample application is written in Kotlin / Spring / Axon
 
 [Kotlin](https://kotlinlang.org/)
 [Spring](https://spring.io/projects/spring-framework)
-[Axon](https://www.axoniq.io/products/axon-framework)
+[OpenCQRS](https://github.com/open-cqrs/opencqrs)
+[EventSourcingDB](https://www.thenativeweb.io/products/eventsourcingdb)
 
 You need to have Docker installed.
 
@@ -58,6 +57,11 @@ Here are the simple steps to start the application in a development environment.
 
 Start the app by right-cicking on the ["ApplicationStarter"](https://github.com/dilgerma/eventsourcing-book/blob/main/src/test/kotlin/de/eventsourcingbook/cart/ApplicationStarter.kt) in src/test/kotlin and klick run.
 This will start the whole application including all dependencies.
+
+The App will start a PostgresDB and an EventSourcingDB.
+
+Access the EventSourcingDB at http://localhost:3000
+The App is running on port 8080.
 
 ### Code Generation
 
