@@ -16,7 +16,7 @@
     <properties>
         <java.version>17</java.version>
         <kotlin.version>1.9.24</kotlin.version>
-        <opencqrs.version>1.0-rc7</opencqrs.version>
+        <opencqrs.version>1.0-rc8</opencqrs.version>
     </properties>
     <dependencies>
         <!-- Open CQRS -->

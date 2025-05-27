@@ -3,7 +3,7 @@ package de.nebulit.eventsourcingbook.slices.additem;
 import java.util.ArrayList;
 import java.util.List;
 
-record Cart(List<String> items) {
+public record Cart(List<String> items) {
 
     public Cart with(String item) {
         List<String> newItems = new ArrayList<>(this.items());
