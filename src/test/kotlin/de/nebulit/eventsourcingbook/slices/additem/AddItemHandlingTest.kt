@@ -6,6 +6,7 @@ import de.nebulit.common.support.RandomData
 import de.nebulit.eventsourcingbook.events.ItemAddedEvent
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
+import java.util.UUID
 
 
 @CommandHandlingTest
@@ -13,18 +14,28 @@ class AddItemHandlingTest {
     @Test
     fun canAddItem(@Autowired fixture: CommandHandlingTestFixture<Cart, AddItemCommand, String>) {
 
-        val command = RandomData.newInstance<AddItemCommand> {  }
+        // see: https://github.com/j-easy/easy-random/issues/397
+        // val command = RandomData.newInstance<AddItemCommand> {  }
+        val command = AddItemCommand(
+            UUID.randomUUID(),
+            "A description",
+            "image.jpg",
+            2.3,
+            4.6,
+            UUID.randomUUID(),
+            UUID.randomUUID(),
+        )
 
         fixture.givenNothing()
             .`when`(command)
             .expectSuccessfulExecution()
-            .expectSingleEvent<ItemAddedEvent>(RandomData.newInstance {
-                aggregateId = command.aggregateId
-                description = command.description
-                image = command.image
-                price = command.price
-                itemId = command.itemId
-                productId = command.productId
-            })
+            .expectSingleEvent<ItemAddedEvent>(ItemAddedEvent(
+                command.aggregateId(),
+                command.description(),
+                command.image(),
+                command.price(),
+                command.itemId(),
+                command.productId()
+            ))
     }
 }
