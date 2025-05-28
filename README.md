@@ -8,7 +8,7 @@ Want to learn Event Modeling, Event Sourcing and slice-based Architectures in a 
 Join the Online Course [Implementing Eventsourcing](https://www.eventsourcingcourse.com)
 
 This implementation is using:
-- [OpenCQRS](https://github.com/open-cqrs/opencqrs)
+- [OpenCQRS](https://www.opencqrs.com)
 - [EventSourcingDB](https://www.thenativeweb.io/products/eventsourcingdb)
 
 The first book to combine Eventmodeling, Eventsourcing to plan and build Software Systems of any size and complexity.
@@ -32,11 +32,11 @@ The Github Repository for the original implementation including all source code 
 
 ### Sample Application
 
-The sample application is written in Kotlin / Spring / Axon
+The sample application is written in Kotlin / Spring / OpenCQRS
 
 [Kotlin](https://kotlinlang.org/)
 [Spring](https://spring.io/projects/spring-framework)
-[OpenCQRS](https://github.com/open-cqrs/opencqrs)
+[OpenCQRS](https://www.opencqrs.com)
 [EventSourcingDB](https://www.thenativeweb.io/products/eventsourcingdb)
 
 You need to have Docker installed.
