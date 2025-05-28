@@ -16,15 +16,18 @@ object RandomData {
         fieldsToIgnore: List<String> = emptyList(),
         block: T.() -> Unit = {},
     ): T {
+        val clazz = T::class.java
         val parameters = EasyRandomParameters()
             .collectionSizeRange(1, 4)
             .randomize(UUID::class.java) { UUID.randomUUID() }
             .randomize(BigDecimal::class.java, BigDecimalRandomizer(2, RoundingMode.CEILING))
             .randomize(CharSequence::class.java) { StringBuilder(StringRandomizer().randomValue) }
             .randomize(ByteBuffer::class.java) { ByteBuffer.wrap(StringRandomizer().randomValue.toByteArray()) }.also {
-
                 it.fieldExclusionPredicates.addAll(fieldsToIgnore.map(FieldPredicates::named))
             }
+        if (clazz.isRecord) {
+            parameters.objectFactory = EasyRandomRecordObjectFactory()
+        }
         val generator = EasyRandom(parameters)
 
         var instance = generator.nextObject(T::class.java)
@@ -32,3 +35,5 @@ object RandomData {
         return instance.apply(block)
     }
 }
+
+
